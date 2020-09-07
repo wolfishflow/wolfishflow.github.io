@@ -1,0 +1,25 @@
+:root {
+  --bkg-image: url("../imgs/DSCF0414-KodakGold100--.jpg");
+}
+
+:root.dark-theme {
+  --bkg-image: url("../imgs/DSCF0232-KodakGold100.jpg");
+}
+
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  #photograph {
+    --bkg-image: url("../imgs/DSCF0232-KodakGold100.jpg");
+  }
+  #photograph.light-theme {
+    --bkg-image: url("../imgs/DSCF0414-KodakGold100--.jpg");
+  }
+}
+
+#photograph {
+  background-image: var(--bkg-image);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
