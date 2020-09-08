@@ -1,0 +1,19 @@
+:root {
+  --bkg-image: url("../imgs/DSCF0232-KodakGold100.jpg");
+  --sun-display: none;
+  --moon-display: block;
+}
+
+#photograph {
+  background-image: var(--bkg-image);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#sun {
+  display: var(--sun-display);
+}
+
+#moon {
+  display: var(--moon-display);
+}

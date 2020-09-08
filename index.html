@@ -5,15 +5,53 @@
     rel="stylesheet"
     href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"
   />
-
-  <link rel="stylesheet" href="css/theme.css" />
+  <!-- Debug style sheet -->
+  <!-- <link rel="stylesheet" href="../tachyons/css/tachyons.css" /> -->
+  <link rel="stylesheet" href="css/dark.css" id="theme-link" />
   <body>
     <!-- code| font family| vh-x == Vertical Height  | dt == display:table | w-x == width | cover == background-size:cover  -->
     <!-- todo: replace photo with personally edited -->
     <article id="photograph" class="code vh-100 dt w-100 cover">
       <!-- dtc == display:table-cell |  v-mid == vertical align mid |tc == text-align:center 
         | ph3 == padding left/right(--spacing-medium) | ph4-l == padding left/right(--spacing-large) -->
+
       <div class="dtc v-mid tc white ph3 ph4-l">
+        <div class="tr">
+          <a
+            id="toggleDarkLightMode"
+            class="link bg-transparent inline-flex items-center ma3"
+            title="Toggle Dark/Light Mode"
+          >
+            <svg
+              id="moon"
+              class="dib h2-l w2-l h2 w2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="black"
+              width="18px"
+              height="18px"
+            >
+              <path d="M0 0h24v24H0z" fill="none" />
+              <circle cx="12" cy="12" r="10" />
+            </svg>
+
+            <svg
+              id="sun"
+              class="dib h2-l w2-l h1 w1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="white"
+              width="18px"
+              height="18px"
+            >
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M20 15.31L23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69zM12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"
+              />
+            </svg>
+          </a>
+        </div>
+
         <!-- f-5-l == font-size:5rem | f2 == font-size:2.25rem | fw6 == font-weight:600 | f1-l == 3rem-->
         <h2 class="f-5-l f2 fw6">Alan Simon</h2>
         <h2 class="f1-l f4 fw6">Android Developer</h2>
@@ -105,7 +143,21 @@
           </div>
         </footer>
       </div>
-      <div></div>
     </article>
   </body>
+  <script>
+    const btn = document.querySelector("#toggleDarkLightMode");
+    const theme = document.querySelector("#theme-link");
+
+    btn.addEventListener("click", function () {
+      if (theme.getAttribute("href") == "css/light.css") {
+        // ... then switch it to "dark-theme.css"
+        theme.href = "css/dark.css";
+        // Otherwise...
+      } else {
+        // ... switch it to "light-theme.css"
+        theme.href = "css/light.css";
+      }
+    });
+  </script>
 </html>
