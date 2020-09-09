@@ -1,0 +1,37 @@
+:root {
+  --bkg-image: url("../imgs/DSCF0232-KodakGold100.jpg");
+  --sun-display: none;
+  --moon-display: block;
+  --light-dark-color: #000000;
+  --light-dark-near-color: #11111185;
+}
+
+#photograph {
+  background-image: var(--bkg-image);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#sun {
+  display: var(--sun-display);
+}
+
+#moon {
+  display: var(--moon-display);
+}
+
+.lightDarkModeColor {
+  color: var(--light-dark-color);
+}
+
+.lightDarkModeFill {
+  fill: var(--light-dark-color);
+}
+
+.hover:hover {
+  color: var(--light-dark-near-color);
+}
+
+.hover:focus {
+  color: var(--light-dark-near-color);
+}
